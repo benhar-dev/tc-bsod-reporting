@@ -1,0 +1,521 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://www.plcopen.org/xml/tc6_0200">
+  <fileHeader companyName="Beckhoff Automation GmbH" productName="TwinCAT PLC Control" productVersion="3.5.6.1" creationDateTime="2016-01-19T13:20:20.3046228" />
+  <contentHeader name="Unbenannt1" modificationDateTime="2016-01-19T13:20:20.3046228">
+    <coordinateInfo>
+      <fbd>
+        <scaling x="1" y="1" />
+      </fbd>
+      <ld>
+        <scaling x="1" y="1" />
+      </ld>
+      <sfc>
+        <scaling x="1" y="1" />
+      </sfc>
+    </coordinateInfo>
+    <addData>
+      <data name="http://www.3s-software.com/plcopenxml/projectinformation" handleUnknown="implementation">
+        <ProjectInformation />
+      </data>
+    </addData>
+  </contentHeader>
+  <types>
+    <dataTypes />
+    <pous>
+      <pou name="CheckBounds" pouType="function">
+        <interface>
+          <returnType>
+            <DINT />
+          </returnType>
+          <inputVars>
+            <variable name="index">
+              <type>
+                <DINT />
+              </type>
+            </variable>
+            <variable name="lower">
+              <type>
+                <DINT />
+              </type>
+            </variable>
+            <variable name="upper">
+              <type>
+                <DINT />
+              </type>
+            </variable>
+          </inputVars>
+          <documentation>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml"> Implicitly generated code : DO NOT EDIT</xhtml>
+          </documentation>
+        </interface>
+        <body>
+          <ST>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml">// Implicitly generated code : Only an Implementation suggestion
+IF  index &lt; lower THEN
+	CheckBounds := lower;
+	CheckBounds_ErrCnt:=CheckBounds_ErrCnt+1;
+ELSIF  index &gt; upper THEN
+	CheckBounds := upper;
+	CheckBounds_ErrCnt:=CheckBounds_ErrCnt+1;
+ELSE  
+	CheckBounds := index;
+END_IF
+</xhtml>
+          </ST>
+        </body>
+        <addData>
+          <data name="http://www.3s-software.com/plcopenxml/interfaceasplaintext" handleUnknown="implementation">
+            <InterfaceAsPlainText>
+              <xhtml xmlns="http://www.w3.org/1999/xhtml">// Implicitly generated code : DO NOT EDIT
+FUNCTION CheckBounds : DINT
+VAR_INPUT
+	index, lower, upper: DINT;
+END_VAR
+</xhtml>
+            </InterfaceAsPlainText>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+            <ObjectId>5ab79694-da8a-4365-8a8c-c0d2b54addf6</ObjectId>
+          </data>
+        </addData>
+      </pou>
+      <pou name="CheckDivDInt" pouType="function">
+        <interface>
+          <returnType>
+            <DINT />
+          </returnType>
+          <inputVars>
+            <variable name="divisor">
+              <type>
+                <DINT />
+              </type>
+            </variable>
+          </inputVars>
+          <documentation>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml"> Implicitly generated code : DO NOT EDIT</xhtml>
+          </documentation>
+        </interface>
+        <body>
+          <ST>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml">// Implicitly generated code : Only an Implementation suggestion
+IF divisor = 0 THEN
+	CheckDivDInt:=1;
+	CheckDivDInt_ErrCnt:=CheckDivDInt_ErrCnt+1;
+ELSE
+	CheckDivDInt:=divisor;
+END_IF;</xhtml>
+          </ST>
+        </body>
+        <addData>
+          <data name="http://www.3s-software.com/plcopenxml/interfaceasplaintext" handleUnknown="implementation">
+            <InterfaceAsPlainText>
+              <xhtml xmlns="http://www.w3.org/1999/xhtml">// Implicitly generated code : DO NOT EDIT
+FUNCTION CheckDivDInt : DINT
+VAR_INPUT
+	divisor:DINT;
+END_VAR</xhtml>
+            </InterfaceAsPlainText>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+            <ObjectId>333b47fa-4f2a-41ab-82cf-87dcbc1176ac</ObjectId>
+          </data>
+        </addData>
+      </pou>
+      <pou name="CheckDivLInt" pouType="function">
+        <interface>
+          <returnType>
+            <LINT />
+          </returnType>
+          <inputVars>
+            <variable name="divisor">
+              <type>
+                <LINT />
+              </type>
+            </variable>
+          </inputVars>
+          <documentation>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml"> Implicitly generated code : DO NOT EDIT</xhtml>
+          </documentation>
+        </interface>
+        <body>
+          <ST>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml">// Implicitly generated code : Only an Implementation suggestion
+IF divisor = 0 THEN
+	CheckDivLInt:=1;
+	CheckDivLInt_ErrCnt:=CheckDivLInt_ErrCnt+1;
+ELSE
+	CheckDivLInt:=divisor;
+END_IF;</xhtml>
+          </ST>
+        </body>
+        <addData>
+          <data name="http://www.3s-software.com/plcopenxml/interfaceasplaintext" handleUnknown="implementation">
+            <InterfaceAsPlainText>
+              <xhtml xmlns="http://www.w3.org/1999/xhtml">// Implicitly generated code : DO NOT EDIT
+FUNCTION CheckDivLInt : LINT
+VAR_INPUT
+	divisor:LINT;
+END_VAR</xhtml>
+            </InterfaceAsPlainText>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+            <ObjectId>6b9b1661-e06e-41fd-a2d9-cf8a5e559fdb</ObjectId>
+          </data>
+        </addData>
+      </pou>
+      <pou name="CheckDivLReal" pouType="function">
+        <interface>
+          <returnType>
+            <LREAL />
+          </returnType>
+          <inputVars>
+            <variable name="divisor">
+              <type>
+                <LREAL />
+              </type>
+            </variable>
+          </inputVars>
+          <documentation>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml"> Implicitly generated code : DO NOT EDIT</xhtml>
+          </documentation>
+        </interface>
+        <body>
+          <ST>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml">// Implicitly generated code : Only an Implementation suggestion
+IF divisor = 0 THEN
+	CheckDivLReal:=1;
+	CheckDivLReal_ErrCnt:=CheckDivLReal_ErrCnt+1;
+ELSE
+	CheckDivLReal:=divisor;
+END_IF;</xhtml>
+          </ST>
+        </body>
+        <addData>
+          <data name="http://www.3s-software.com/plcopenxml/interfaceasplaintext" handleUnknown="implementation">
+            <InterfaceAsPlainText>
+              <xhtml xmlns="http://www.w3.org/1999/xhtml">// Implicitly generated code : DO NOT EDIT
+FUNCTION CheckDivLReal : LREAL
+VAR_INPUT
+	divisor:LREAL;
+END_VAR</xhtml>
+            </InterfaceAsPlainText>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+            <ObjectId>8ca11a6d-6593-487b-ba0d-baed2b9eca36</ObjectId>
+          </data>
+        </addData>
+      </pou>
+      <pou name="CheckDivReal" pouType="function">
+        <interface>
+          <returnType>
+            <REAL />
+          </returnType>
+          <inputVars>
+            <variable name="divisor">
+              <type>
+                <REAL />
+              </type>
+            </variable>
+          </inputVars>
+          <documentation>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml"> Implicitly generated code : DO NOT EDIT</xhtml>
+          </documentation>
+        </interface>
+        <body>
+          <ST>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml">// Implicitly generated code : Only an Implementation suggestion
+IF divisor = 0 THEN
+	CheckDivReal:=1;
+	CheckDivReal_ErrCnt:=CheckDivReal_ErrCnt+1;
+ELSE
+	CheckDivReal:=divisor;
+END_IF;</xhtml>
+          </ST>
+        </body>
+        <addData>
+          <data name="http://www.3s-software.com/plcopenxml/interfaceasplaintext" handleUnknown="implementation">
+            <InterfaceAsPlainText>
+              <xhtml xmlns="http://www.w3.org/1999/xhtml">// Implicitly generated code : DO NOT EDIT
+FUNCTION CheckDivReal : REAL
+VAR_INPUT
+	divisor:REAL;
+END_VAR</xhtml>
+            </InterfaceAsPlainText>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+            <ObjectId>7dcbe04f-e635-4959-a69e-dfd4a1bae4e3</ObjectId>
+          </data>
+        </addData>
+      </pou>
+      <pou name="CheckPointer" pouType="function">
+        <interface>
+          <returnType>
+            <pointer>
+              <baseType>
+                <BYTE />
+              </baseType>
+            </pointer>
+          </returnType>
+          <inputVars>
+            <variable name="ptToTest">
+              <type>
+                <pointer>
+                  <baseType>
+                    <BYTE />
+                  </baseType>
+                </pointer>
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Destination address of the pointer</xhtml>
+              </documentation>
+            </variable>
+            <variable name="iSize">
+              <type>
+                <DINT />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Size of the type the pointer points to. (e.g: 20 for POINTER TO ARRAY [0..9] OF INT) </xhtml>
+              </documentation>
+            </variable>
+            <variable name="iGran">
+              <type>
+                <DINT />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Granularity of the pointer access. This is the size of the biggest non-structured data type in the type the pointer points to. (e.g: 2 for POINTER TO ARRAY [0..9] OF INT)</xhtml>
+              </documentation>
+            </variable>
+            <variable name="bWrite">
+              <type>
+                <BOOL />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Indicates read or write Access. TRUE = write access.</xhtml>
+              </documentation>
+            </variable>
+          </inputVars>
+          <documentation>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml"> Implicitly generated code : DO NOT EDIT</xhtml>
+          </documentation>
+        </interface>
+        <body>
+          <ST>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml">// No standard way of implementation. Fill your own code here
+CheckPointer := ptToTest;</xhtml>
+          </ST>
+        </body>
+        <addData>
+          <data name="http://www.3s-software.com/plcopenxml/interfaceasplaintext" handleUnknown="implementation">
+            <InterfaceAsPlainText>
+              <xhtml xmlns="http://www.w3.org/1999/xhtml">// Implicitly generated code : DO NOT EDIT
+FUNCTION CheckPointer : POINTER TO BYTE
+VAR_INPUT 
+	ptToTest : POINTER TO BYTE; // Destination address of the pointer
+	iSize : DINT;		        // Size of the type the pointer points to. (e.g: 20 for POINTER TO ARRAY [0..9] OF INT) 
+	iGran : DINT;		        // Granularity of the pointer access. This is the size of the biggest non-structured data type in the type the pointer points to. (e.g: 2 for POINTER TO ARRAY [0..9] OF INT)
+	bWrite: BOOL;		        // Indicates read or write Access. TRUE = write access.
+END_VAR
+</xhtml>
+            </InterfaceAsPlainText>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+            <ObjectId>d7b630d4-03ed-4570-a9e6-99160cf1e255</ObjectId>
+          </data>
+        </addData>
+      </pou>
+      <pou name="CheckRangeSigned" pouType="function">
+        <interface>
+          <returnType>
+            <DINT />
+          </returnType>
+          <inputVars>
+            <variable name="value">
+              <type>
+                <DINT />
+              </type>
+            </variable>
+            <variable name="lower">
+              <type>
+                <DINT />
+              </type>
+            </variable>
+            <variable name="upper">
+              <type>
+                <DINT />
+              </type>
+            </variable>
+          </inputVars>
+          <documentation>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml"> Implicitly generated code : DO NOT EDIT</xhtml>
+          </documentation>
+        </interface>
+        <body>
+          <ST>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml">// Implicitly generated code : Only an Implementation suggestion
+IF (value &lt; lower) THEN
+	CheckRangeSigned := lower;
+	CheckRangeSigned_ErrCnt:=CheckRangeSigned_ErrCnt+1;
+ELSIF(value &gt; upper) THEN
+	CheckRangeSigned := upper;
+	CheckRangeSigned_ErrCnt:=CheckRangeSigned_ErrCnt+1;
+ELSE
+	CheckRangeSigned := value;
+END_IF</xhtml>
+          </ST>
+        </body>
+        <addData>
+          <data name="http://www.3s-software.com/plcopenxml/interfaceasplaintext" handleUnknown="implementation">
+            <InterfaceAsPlainText>
+              <xhtml xmlns="http://www.w3.org/1999/xhtml">// Implicitly generated code : DO NOT EDIT
+FUNCTION CheckRangeSigned : DINT
+VAR_INPUT
+	value, lower, upper: DINT;
+END_VAR</xhtml>
+            </InterfaceAsPlainText>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+            <ObjectId>17cf3a62-f180-417c-b419-4f7c94ea0028</ObjectId>
+          </data>
+        </addData>
+      </pou>
+      <pou name="CheckRangeUnsigned" pouType="function">
+        <interface>
+          <returnType>
+            <UDINT />
+          </returnType>
+          <inputVars>
+            <variable name="value">
+              <type>
+                <UDINT />
+              </type>
+            </variable>
+            <variable name="lower">
+              <type>
+                <UDINT />
+              </type>
+            </variable>
+            <variable name="upper">
+              <type>
+                <UDINT />
+              </type>
+            </variable>
+          </inputVars>
+          <documentation>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml"> Implicitly generated code : DO NOT EDIT</xhtml>
+          </documentation>
+        </interface>
+        <body>
+          <ST>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml">// Implicitly generated code : Only an Implementation suggestion
+IF (value &lt; lower) THEN
+	CheckRangeUnsigned := lower;
+	CheckRangeUnsigned_ErrCnt:=CheckRangeUnsigned_ErrCnt+1;
+ELSIF(value &gt; upper) THEN
+	CheckRangeUnsigned := upper;
+	CheckRangeUnsigned_ErrCnt:=CheckRangeUnsigned_ErrCnt+1;
+ELSE
+	CheckRangeUnsigned := value;
+END_IF</xhtml>
+          </ST>
+        </body>
+        <addData>
+          <data name="http://www.3s-software.com/plcopenxml/interfaceasplaintext" handleUnknown="implementation">
+            <InterfaceAsPlainText>
+              <xhtml xmlns="http://www.w3.org/1999/xhtml">// Implicitly generated code : DO NOT EDIT
+FUNCTION CheckRangeUnsigned : UDINT
+VAR_INPUT
+	value, lower, upper: UDINT;
+END_VAR</xhtml>
+            </InterfaceAsPlainText>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+            <ObjectId>af3bbcb6-8614-413d-ae84-a68ab32718aa</ObjectId>
+          </data>
+        </addData>
+      </pou>
+    </pous>
+  </types>
+  <instances>
+    <configurations />
+  </instances>
+  <addData>
+    <data name="http://www.3s-software.com/plcopenxml/globalvars" handleUnknown="implementation">
+      <globalVars name="GVL_Checks">
+        <variable name="CheckBounds_ErrCnt">
+          <type>
+            <DINT />
+          </type>
+        </variable>
+        <variable name="CheckDivDInt_ErrCnt">
+          <type>
+            <DINT />
+          </type>
+        </variable>
+        <variable name="CheckDivLInt_ErrCnt">
+          <type>
+            <DINT />
+          </type>
+        </variable>
+        <variable name="CheckDivLReal_ErrCnt">
+          <type>
+            <DINT />
+          </type>
+        </variable>
+        <variable name="CheckDivReal_ErrCnt">
+          <type>
+            <DINT />
+          </type>
+        </variable>
+        <variable name="CheckRangeSigned_ErrCnt">
+          <type>
+            <DINT />
+          </type>
+        </variable>
+        <variable name="CheckRangeUnsigned_ErrCnt">
+          <type>
+            <DINT />
+          </type>
+        </variable>
+        <addData>
+          <data name="http://www.3s-software.com/plcopenxml/buildproperties" handleUnknown="implementation">
+            <BuildProperties>
+              <LinkAlways>true</LinkAlways>
+            </BuildProperties>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/interfaceasplaintext" handleUnknown="implementation">
+            <InterfaceAsPlainText>
+              <xhtml xmlns="http://www.w3.org/1999/xhtml">VAR_GLOBAL
+	CheckBounds_ErrCnt				:DINT;
+	CheckDivDInt_ErrCnt				:DINT;
+	CheckDivLInt_ErrCnt				:DINT;
+	CheckDivLReal_ErrCnt			:DINT;
+	CheckDivReal_ErrCnt				:DINT;
+	CheckRangeSigned_ErrCnt			:DINT;
+	CheckRangeUnsigned_ErrCnt		:DINT;
+	
+END_VAR</xhtml>
+            </InterfaceAsPlainText>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+            <ObjectId>9f371512-75ab-4f5e-be55-2d71f2b66a8d</ObjectId>
+          </data>
+        </addData>
+      </globalVars>
+    </data>
+    <data name="http://www.3s-software.com/plcopenxml/projectstructure" handleUnknown="discard">
+      <ProjectStructure>
+        <Folder Name="Checks">
+          <Object Name="CheckBounds" ObjectId="5ab79694-da8a-4365-8a8c-c0d2b54addf6" />
+          <Object Name="CheckDivDInt" ObjectId="333b47fa-4f2a-41ab-82cf-87dcbc1176ac" />
+          <Object Name="CheckDivLInt" ObjectId="6b9b1661-e06e-41fd-a2d9-cf8a5e559fdb" />
+          <Object Name="CheckDivLReal" ObjectId="8ca11a6d-6593-487b-ba0d-baed2b9eca36" />
+          <Object Name="CheckDivReal" ObjectId="7dcbe04f-e635-4959-a69e-dfd4a1bae4e3" />
+          <Object Name="CheckPointer" ObjectId="d7b630d4-03ed-4570-a9e6-99160cf1e255" />
+          <Object Name="CheckRangeSigned" ObjectId="17cf3a62-f180-417c-b419-4f7c94ea0028" />
+          <Object Name="CheckRangeUnsigned" ObjectId="af3bbcb6-8614-413d-ae84-a68ab32718aa" />
+          <Object Name="GVL_Checks" ObjectId="9f371512-75ab-4f5e-be55-2d71f2b66a8d" />
+        </Folder>
+      </ProjectStructure>
+    </data>
+  </addData>
+</project>
